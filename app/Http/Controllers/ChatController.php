@@ -7,12 +7,23 @@ use Illuminate\Http\Request;
 
 class ChatController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function message()
+    {
+        return view('message');
+    }
+
     public function getMessages()//get messages
     {
         $messages = Message::all();
 
         return response()->json($messages,200);
     }
+
     public function sendMessage(Request $request)//send messages
     {
         $data = $request->only(['name','body']);
