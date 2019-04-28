@@ -25,6 +25,8 @@ PRedis: composer require Predis/Predis
 
 Socket.io: npm install socket.io --save-dev
 
+Socket.io Client: npm install socket.io-client
+
 8. Run NPM development: npm run dev
 9. Start the redis Server: node server.js
 10. Enjoy the APP
