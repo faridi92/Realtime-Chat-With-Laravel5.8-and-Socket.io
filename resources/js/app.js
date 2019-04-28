@@ -7,7 +7,10 @@
 
 require('./bootstrap');
 
+import VueSocketio from 'vue-socket.io';
+import socketio from 'socket.io-client'
 window.Vue = require('vue');
+Vue.use(VueSocketio, socketio(':6999'));
 
 /**
  * The following block of code may be used to automatically register your
@@ -21,6 +24,8 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('Message', require('./components/Message.vue'));
+Vue.component('User', require('./components/User.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
